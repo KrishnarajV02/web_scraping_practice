@@ -6,7 +6,6 @@ city=input("Enter the city : ")
 data = requests.get("https://www.google.com/search?q=latitude+and+longitude+of+"+city)#+"&client=opera&hs=vyo&ei=WXTSZJ2VEMelhwOyqrIw&oq=lattitude+and+long+of+bangalore&gs_lp=Egxnd3Mtd2l6LXNlcnAiH2xhdHRpdHVkZSBhbmQgbG9uZyBvZiBiYW5nYWxvcmUqAggAMgUQABiiBDIFEAAYogQyBRAAGKIESLgeULcGWMoRcAF4AZABAJgBsAGgAb4FqgEDMi40uAEByAEA-AEBwgIKEAAYRxjWBBiwA8ICDBAAGA0YgAQYRhj7AcICChAAGAgYHhgNGA_CAggQABiKBRiGA8ICChAhGKABGMMEGAriAwQYACBBiAYBkAYI&sclient=gws-wiz-serp")
 data = BeautifulSoup(data.text,"html.parser")
 latlong = str(data.text)
-print(latlong)
 a=(latlong.find("Coordinates"))+11
 b = latlong.find("° N" )
 lat=latlong[a:b]
